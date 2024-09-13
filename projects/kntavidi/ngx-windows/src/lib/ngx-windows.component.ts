@@ -9,11 +9,9 @@ import { NgxWindowComponent } from './window-item-host/ngx-window.component';
     NgxWindowComponent
   ],
   template: `
-    <p>
       @for(window of windows(); track window.id){
         <ngx-window [windowConfig]="window"/>
       }
-    </p>
   `,
   styles: ``
 })

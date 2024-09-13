@@ -18,20 +18,7 @@ export class NgxWindowsService {
   }
 
 
-  #windows = signal<ExtendedWindowConfig[]>([
-    {
-      id: IdGenerator.Default.next().value as number,
-      component: undefined as any,
-      name: 'some window',
-      matIcon: 'public'
-    },
-    {
-      id: IdGenerator.Default.next().value as number,
-      component: undefined as any,
-      name: 'some window 2',
-      matIcon: 'terminal'
-    }
-  ]);
+  #windows = signal<ExtendedWindowConfig[]>([]);
   windows = this.#windows.asReadonly();
 
   constructor(

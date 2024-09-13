@@ -1,8 +1,9 @@
 import { WindowConfig } from "../projects/kntavidi/ngx-windows/src/lib/window.model";
+import { MusicPlayerComponent } from "./application-components/music-player-component";
 
 export const SampleApps : WindowConfig[] = [
     {
-        component: undefined as any,
+        component: MusicPlayerComponent,
         name: 'Music player',
         matIcon: 'music_note'
     },
@@ -20,5 +21,10 @@ export const SampleApps : WindowConfig[] = [
         component: undefined as any,
         name: 'Terminal',
         matIcon: 'terminal'
+    },
+    {
+        component: undefined as any,
+        name: 'Radio',
+        matIcon: 'radio'
     },
 ]

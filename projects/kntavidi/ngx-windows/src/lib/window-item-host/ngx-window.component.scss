@@ -29,7 +29,8 @@
 
     border-radius: 8px;
 
-    display: inline-block;
+    display: inline-flex;
+    flex-direction: column;
     // background-color: red;
     position: fixed;
     left: calc(50% - 10rem);
@@ -65,6 +66,13 @@
     .window-actions{
         display: flex;
     }
+}
+.window-body{
+    flex-grow: 1;
+    height: 0;
+    background-color: red;
+    overflow: auto;
+    display: flex;
 }
 
 [cdkDragHandle]{

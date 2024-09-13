@@ -5,6 +5,7 @@ import { ExtendedWindowConfig } from "../window.model";
 import { NgxWindowsService } from "../ngx-windows.service";
 import { MatIcon } from "@angular/material/icon";
 import { animate, style, transition, trigger } from "@angular/animations";
+import { NgComponentOutlet } from "@angular/common";
 
 @Component({
     selector: 'ngx-window',
@@ -21,11 +22,22 @@ import { animate, style, transition, trigger } from "@angular/animations";
                     transform: 'scale(1)'
                 }))
             ]),
+            transition(':leave', [
+                style({
+                    opacity: 1,
+                    transform: 'scale(1)'
+                }),
+                animate('600ms cubic-bezier(.41,.9,.36,1.44)', style({
+                    opacity: .6,
+                    transform: 'scale(.6)'
+                }))
+            ]),
         ])
     ],
     imports: [
         CdkDragHandle,
         MatIcon,
+        NgComponentOutlet
     ],
     hostDirectives: [
         CdkDrag,
@@ -53,6 +65,11 @@ import { animate, style, transition, trigger } from "@angular/animations";
                 </button>
 
             </div>
+        </div>
+        <div class="window-body">
+            @if(windowConfig().component; as windowComponent){
+                <ng-container [ngComponentOutlet]="windowComponent"] />
+            }
         </div>
 
         
