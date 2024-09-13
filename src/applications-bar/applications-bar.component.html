@@ -1,0 +1,12 @@
+<div class="applications-bar">
+
+    @for (app of apps; track $index) {
+        <div class="application-item" 
+            (click)="openApp(app)"
+            [matTooltip]="app.name"
+            [matTooltipShowDelay]="400"
+        >
+            <mat-icon>{{app.matIcon}}</mat-icon>
+        </div>
+    }
+</div>
